@@ -10,6 +10,6 @@
 		"source": "^(.*)(.xs(js|odata))(.*)$",
 		"authenticationType": "xsuaa",
 		"scope": "$XSAPPNAME.USER",
-		"destination": "xsjs_b"
+		"destination": "xsjs_be"
 	}]
 }
