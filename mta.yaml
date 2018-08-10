@@ -42,10 +42,6 @@ modules:
  - name: xsjs
    type: nodejs
    path: xsjs
-   provides:
-    - name: xsjs_api
-      properties:
-         url: ${default-url}
    requires:
     - name: hdi_db
     - name: live5uaa
