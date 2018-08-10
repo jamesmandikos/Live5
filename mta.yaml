@@ -14,7 +14,13 @@ modules:
        name: node_be
        url: ~{service_url}
        forwardAuthToken: true
- 
+    - name: xsjs_api
+      group: destinations
+      properties:
+       name: xsjs_be
+       url: ~{service_url}
+       forwardAuthToken: true
+       
  - name: db
    type: hdb
    path: db
@@ -29,6 +35,22 @@ modules:
     - name: live5uaa
    provides:
     - name: node_api
+      properties:
+        service_url: ${default-url}
+
+
+ - name: xsjs
+   type: nodejs
+   path: xsjs
+   provides:
+    - name: xsjs_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hdi_db
+    - name: live5uaa
+   provides:
+    - name: xsjs_api
       properties:
         service_url: ${default-url}
 
